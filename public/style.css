@@ -1,0 +1,203 @@
+.input1T {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+.input2P {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+.input3Pr {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+.input4S {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+
+.input5E {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+
+.final {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+
+.final1 {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+
+.final2 {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+
+.total {
+  display: inline-block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 190px;
+}
+
+/* modal */
+.modquote {
+  background-color: #0f1123;
+  color: #f0e5d8;
+}
+.cardText {
+  background-color: #75cfb8;
+  color: white;
+  padding-bottom: 5%;
+}
+
+.pics {
+  text-align: center;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+  color: #ffc478;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: #ffc478;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.slogan {
+  padding-top: 5%;
+  background-color: white;
+  color: #232320;
+  font-size: x-large;
+  font-weight: 600;
+  font-family: Merriweather;
+}
+.slogan2 {
+  background-color: white;
+  color: #ffc75f;
+  font-size: x-large;
+  font-weight: 600;
+  font-family: Merriweather;
+}
+
+.quote {
+  color: #ffc478;
+
+  font-size: medium;
+  font-weight: 600;
+  font-family: Merriweather;
+}
+
+.borderRad {
+  border-radius: 10px;
+  background-color: #0f1123;
+  color: #f0e5d8;
+}
+
+.todo {
+  border-radius: 10px;
+  background-color: #ffc478;
+  color: #0f1123;
+}
+
+.todoTitle {
+  color: #0f1123;
+  font-size: 2em;
+  font-weight: 800;
+  font-family: Roboto, sans-serif;
+}
+
+h3 {
+  color: #0f1123;
+  font-family: Roboto, sans-serif;
+}
+
+.subTitle {
+  padding-bottom: 2em;
+  font-family: Merriweather;
+}
+
+.form-check {
+  position: relative;
+  text-align: center;
+}
+
+.btnColor {
+  color: #ffc478;
+  background-color: #0f1123;
+  font-weight: 800;
+  font-family: Merriweather;
+}
+
+.warning {
+  color: #351f39;
+  font-style: italic;
+  font-size: medium;
+  font-weight: 800;
+}
+
+.cardTextHeader {
+  background-color: #75cfb8;
+  color: #0a043c;
+  font-family: Merriweather;
+  font-weight: 800;
+}
+
+.py-5 {
+  padding-bottom: 0;
+  border-bottom: 0;
+  border-top: 0;
+  padding-top: 0;
+}
