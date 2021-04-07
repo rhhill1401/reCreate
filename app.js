@@ -4,7 +4,13 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-let items = [];
+let items = [
+  "30 minute cardio",
+  "4 hours of deep learning",
+  "1 hour focused reading",
+  "Keto",
+  "No TV",
+];
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -68,13 +74,9 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  cardioChk = req.body.newItem1; //* create name"" in form in html
-  blankField = req.body.newItem;
-  readingChk = req.body.newItem2;
-  noTV = req.body.newItem3;
-  deepLearning = req.body.newItem4;
+  cardioChk = req.body.newItem; //* create name"" in form in html
 
-  items.push(cardioChk, blankField, readingChk, noTV, deepLearning);
+  items.push(cardioChk);
 
   res.redirect("/todolist"); //! redirects to the todolist page
 });
