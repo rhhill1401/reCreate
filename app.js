@@ -12,25 +12,42 @@ let items = [
   "No TV",
 ];
 
+let intermediateItems = [
+  "30 minute cardio",
+  "4 hours of deep learning",
+  "1 hour focused reading",
+  "Keto",
+  "No TV",
+];
+
+let advancedItems = [
+  "30 minute cardio",
+  "4 hours of deep learning",
+  "1 hour focused reading",
+  "Keto",
+  "No TV",
+];
+
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let firstQuote = "";
+let arthur = "";
+
+const today = new Date();
+
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+let day = today.toLocaleDateString("en-US", options);
+
 app.get("/", function (req, res) {
-  const today = new Date();
-
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-
-  let day = today.toLocaleDateString("en-US", options);
-
-  let firstQuote = "";
-  let arthur = "";
   const quoteNum = Math.trunc(Math.random() * 7) + 1;
 
   if (quoteNum === 1) {
@@ -61,7 +78,8 @@ app.get("/", function (req, res) {
   res.render("list");
   app.get("/todolist", (req, res) => {
     res.render("todolist", {
-      kindOfDay: day,
+      listTitle: day,
+      Beginner: "Beginner",
       newListItems: items,
       MainQuote: firstQuote,
       ArthurQuote: arthur,
@@ -78,6 +96,40 @@ app.post("/", function (req, res) {
 
   items.push(cardioChk);
 
+  res.redirect("/todolist"); //! redirects to the todolist page
+});
+
+app.get("/intermediate", function (req, res) {
+  res.render("todolist", {
+    listTitle: day,
+    Beginner: "Intermediate",
+    newListItems: intermediateItems,
+    MainQuote: firstQuote,
+    ArthurQuote: arthur,
+  });
+});
+
+app.post("/", function (req, res) {
+  cardioChk = req.body.newItem; //* create name"" in form in html
+  intermediateItems.push(item);
+  items.push(cardioChk);
+  res.redirect("/todolist"); //! redirects to the todolist page
+});
+
+app.get("/advanced", function (req, res) {
+  res.render("todolist", {
+    listTitle: day,
+    Beginner: "Advanced",
+    newListItems: advancedItems,
+    MainQuote: firstQuote,
+    ArthurQuote: arthur,
+  });
+});
+
+app.post("/", function (req, res) {
+  cardioChk = req.body.newItem; //* create name"" in form in html
+  advancedItems.push(item);
+  items.push(cardioChk);
   res.redirect("/todolist"); //! redirects to the todolist page
 });
 
