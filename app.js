@@ -92,11 +92,19 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  cardioChk = req.body.newItem; //* create name"" in form in html
+  cardioChk = req.body.newItem;
 
-  items.push(cardioChk);
+  if (req.body.list === "Intermediate") {
+    intermediateItems.push(cardioChk);
+    res.redirect("/intermediate");
+  } else if (req.body.list === "Advanced") {
+    advancedItems.push(cardioChk);
+    res.redirect("/advanced");
+  } else {
+    items.push(cardioChk);
 
-  res.redirect("/todolist"); //! redirects to the todolist page
+    res.redirect("/todolist"); //! redirects to the todolist page
+  }
 });
 
 app.get("/intermediate", function (req, res) {
@@ -113,7 +121,7 @@ app.post("/", function (req, res) {
   cardioChk = req.body.newItem; //* create name"" in form in html
   intermediateItems.push(item);
   items.push(cardioChk);
-  res.redirect("/todolist"); //! redirects to the todolist page
+  res.redirect("/"); //! redirects to the todolist page
 });
 
 app.get("/advanced", function (req, res) {
@@ -130,7 +138,7 @@ app.post("/", function (req, res) {
   cardioChk = req.body.newItem; //* create name"" in form in html
   advancedItems.push(item);
   items.push(cardioChk);
-  res.redirect("/todolist"); //! redirects to the todolist page
+  res.redirect("/"); //! redirects to the todolist page
 });
 
 app.listen(3000, function () {
